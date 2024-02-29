@@ -69,7 +69,6 @@ table {
   justify-content: space-around;
   padding: 50px;
   z-index: 99;
-  display: none;
 }
 
 .instructions-hidden {

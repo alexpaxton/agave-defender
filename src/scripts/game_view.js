@@ -68,6 +68,7 @@ class GameView {
     // only want to draw start, win, and game over messages once;
     this.messageDrawn = false;
 
+    this.bindInstructionsHandler();
     this.bindStartHandler();
   }
   
@@ -240,6 +241,17 @@ class GameView {
     this.bindControlHandlers();
     setTimeout(this.game.resetAddEnemyCooldown.bind(this.game), 1500);
     this.messageDrawn = false;
+  }
+
+  handleInstructionsButton() {
+    const instructionsContainer = document.getElementById("instructions");
+    instructionsContainer.classList.toggle("instructions-hidden")
+  }
+
+  bindInstructionsHandler() {
+    this.instructionsButtonHandler = this.handleInstructionsButton.bind(this);
+    const instructionsButton = document.getElementById("start-game");
+    instructionsButton.addEventListener("click", this.instructionsButtonHandler)
   }
 
   bindStartHandler() {
