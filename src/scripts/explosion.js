@@ -10,9 +10,9 @@ class Explosion extends MovingObject {
     
     // minor for enemy ships, major for player/boss death
     if (explosionType === "minor") {
-      image.src = "src/assets/images/explosion1.png";
+      image.src = "https://images.squarespace-cdn.com/content/6316c6e206a7993959718879/dfd05171-57ad-4a36-9e7b-7110cdab1baf/explosion1.png";
     } else if (explosionType === "major" ) {
-      image.src = "src/assets/images/explosion2.png";
+      image.src = "https://images.squarespace-cdn.com/content/6316c6e206a7993959718879/a8f574e9-b0db-4cb8-bc91-f626fae49fd6/explosion2.png";
     }
 
     const argsObj = {

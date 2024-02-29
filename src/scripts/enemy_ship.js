@@ -10,9 +10,9 @@ class EnemyShip extends Ship {
   constructor(game, posX, speed, cooldown) {
     // Ship/MovingObject related arguments
     let image = document.createElement("img");
-    image.src = "src/assets/images/enemy1.png";
-    let height = 40;
-    let width = 46;
+    image.src = "https://images.squarespace-cdn.com/content/6316c6e206a7993959718879/740c1152-1afc-40a3-8d50-8e2cdec8261f/enemy1.png";
+    let width = 23;
+    let height = 80;
     let health = 1;
     let projectileDmg = 1;
 
@@ -37,7 +37,7 @@ class EnemyShip extends Ship {
 
     // Projectile related arguments
     image = document.createElement("img");
-    image.src = "src/assets/images/enemy_projectile.png";
+    image.src = "https://images.squarespace-cdn.com/content/6316c6e206a7993959718879/f0cc2cc7-6f4f-4ecb-80d9-b13bbd04720c/enemy_projectile.png";
     const projectileArgs = [{
       objArgs: {
         velocity: [0, 8],

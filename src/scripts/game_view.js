@@ -44,12 +44,12 @@ class GameView {
     // x, y are the background position offsets as it moves (only y changes)
     // dy controls change in speed
     const backgroundImg = new Image();
-    backgroundImg.src = "src/assets/images/game_background.png";
+    backgroundImg.src = "https://images.squarespace-cdn.com/content/6316c6e206a7993959718879/c73080e6-fa02-4ce0-a799-d37804d79578/game_background.jpg";
     this.bgSettings = {
       img: backgroundImg,
       x: 0,
       y: 700,
-      dy: 0.5
+      dy: 0.777
     }
 
     // mouse follow options

@@ -12,9 +12,9 @@ class PlayerShip extends Ship {
   constructor(game) {
     // Ship/MovingObject related arguments
     let image = document.createElement("img");
-    image.src = "src/assets/images/player1.png";
-    let height = 48;
-    let width = 37;
+    image.src = "https://images.squarespace-cdn.com/content/6316c6e206a7993959718879/48067fa2-57f9-42c8-baed-7207d4b4085c/player1.png";
+    let width = 34;
+    let height = 55;
     const objArgs = {
       width: width,
       height: height,
@@ -29,7 +29,7 @@ class PlayerShip extends Ship {
 
     // Projectile related arguments
     image = document.createElement("img");
-    image.src = "src/assets/images/player_projectile.png";
+    image.src = "https://images.squarespace-cdn.com/content/6316c6e206a7993959718879/f0cc2cc7-6f4f-4ecb-80d9-b13bbd04720c/enemy_projectile.png";
     const projectileArgs = [{
       objArgs: {
         velocity: [0, -10],

@@ -11,9 +11,9 @@ class Boss extends Ship {
   constructor(game) {
     // Ship/Moving Object related arguments
     let image = document.createElement("img");
-    image.src = "src/assets/images/boss1.png";
-    let height = 220;
-    let width = 250
+    image.src = "https://images.squarespace-cdn.com/content/6316c6e206a7993959718879/07783292-53fc-470b-8b8c-2299bd8e7a01/boss1.png";
+    let width = 178
+    let height = 258;
     let health = Boss.MAX_HEALTH;
     let projectileDmg = 2;
 
@@ -31,7 +31,7 @@ class Boss extends Ship {
 
     // Projectile related arguments
     image = document.createElement("img");
-    image.src = "src/assets/images/enemy_projectile.png";
+    image.src = "https://images.squarespace-cdn.com/content/6316c6e206a7993959718879/f0cc2cc7-6f4f-4ecb-80d9-b13bbd04720c/enemy_projectile.png";
     const projectileArgs = [{
       objArgs: {
         velocity: [0, 8],
