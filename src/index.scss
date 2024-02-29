@@ -1,9 +1,6 @@
 @import "./styles/css-reset.scss";
+@import "./styles/instructions.scss";
 @import "./styles/main-container.scss";
-
-.break {
-  flex-basis: 100%;
-}
 
 body {
   -ms-overflow-style: none;

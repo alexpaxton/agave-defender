@@ -1,0 +1,77 @@
+$info-height: 50px;
+$yellow: #ef9841;
+$green: #056b56;
+$green-dark: #004e3e;
+$almost-black: #0a2114;
+$beige: #e3e0c9;
+$orange: #f05023;
+
+.instructions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $yellow;
+  color: $green;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 50px;
+  z-index: 99;
+}
+
+.instructions-hidden {
+  display: none;
+}
+
+.instructions-content {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  h3.instructions-heading {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    color: inherit;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.instructions-start {
+  background-color: $green;
+  color: $yellow;
+  border: 0;
+  font-size: 40px;
+  font-weight: 600;
+  height: 80px;
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-family: inherit;
+  line-height: 88px;
+
+  &:hover {
+    cursor: pointer;
+    background-color:$green-dark;
+  }
+}
+
+.instructions-logo {
+  width: 75%;
+  margin: 0 auto;
+  user-select: inherit;
+}

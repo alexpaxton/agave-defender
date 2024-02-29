@@ -55,291 +55,221 @@ table {
   border-spacing: 0;
 }
 
-.main-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 10px;
-}
-.main-container i, .main-container p, .main-container span, .main-container li, .main-container h1, .main-container h2 {
-  background-color: black;
-}
-.main-container .header, .main-container aside, .main-container #game-view {
-  border: 5px ridge white;
-}
-.main-container .header {
-  width: 660px;
-  text-align: center;
-  margin-bottom: 10px;
-  padding: 20px;
-  height: auto;
+.instructions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ef9841;
+  color: #056b56;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 50px;
+  z-index: 99;
 }
-.main-container .header .project-title {
-  font-size: 80px;
-  font-family: "Bangers", sans-serif;
+
+.instructions-hidden {
+  display: none;
 }
-.main-container .header .dev-name {
-  font-family: "Oswald", sans-serif;
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-.main-container .header .nav-links {
+
+.instructions-content {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.instructions-content h3.instructions-heading {
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  color: inherit;
+}
+.instructions-content ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.instructions-start {
+  background-color: #056b56;
+  color: #ef9841;
+  border: 0;
+  font-size: 40px;
+  font-weight: 600;
+  height: 80px;
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-family: inherit;
+  line-height: 88px;
+}
+.instructions-start:hover {
+  cursor: pointer;
+  background-color: #004e3e;
+}
+
+.instructions-logo {
+  width: 75%;
+  margin: 0 auto;
+  user-select: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  overflow: hidden;
+  background-color: #ef9841;
+}
+
+.main-container {
+  background-color: #004e3e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
-.main-container .header .nav-links a {
-  text-decoration: none;
-  margin: 0 10px 0 10px;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
 }
-.main-container .header .nav-links a i {
-  color: white;
-  font-size: 30px;
+
+.header__block {
+  display: flex;
+  flex: 1 0 33.3333%;
 }
-.main-container aside {
-  width: 220px;
-  padding: 5px;
-  font-family: "Oswald", sans-serif;
+
+.player-health {
+  grid-area: life;
 }
-.main-container #game-view {
-  margin: 0 10px;
+
+.score-container {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #e3e0c9;
+  grid-area: score;
+}
+
+.game-info {
+  grid-area: info;
+  justify-content: flex-end;
+}
+
+.game-stats {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.game-stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.game-stat__key {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ef9841;
+}
+
+.game-stat__value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e3e0c9;
+}
+
+.health-bar {
+  width: 200px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #0a2114;
+  border: 2px solid #ef9841;
+  display: flex;
+  list-style: none;
+  overflow: hidden;
+}
+.health-bar li {
+  width: 20px;
+  height: 20px;
+  animation: fadeIn 1s linear;
+}
+
+#player-health-bar li {
+  background-color: #f05023;
+}
+
+#boss-info {
+  display: none;
+}
+
+#boss-health-bar li {
+  background-color: #056b56;
+}
+
+#game-view {
+  border: 2px solid #ef9841;
+  border-radius: 8px;
   background: black;
   touch-action: none;
   cursor: crosshair;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-.main-container .game-instructions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: start;
-  font-size: 25px;
-}
-.main-container .game-instructions .instructions-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-basis: 100%;
-}
-.main-container .game-instructions .instructions-container .settings-container {
-  display: flex;
-  flex-basis: 100%;
-  flex-direction: column;
-}
-.main-container .game-instructions .instructions-container .settings-container .keys-container .keys-icon {
-  flex-basis: 33%;
-  justify-content: end;
-  margin-right: 20px;
-}
-.main-container .game-instructions .instructions-container .settings-container .keys-container:last-of-type {
-  margin: 10px 0;
-}
-.main-container .game-instructions .instructions-container .keys-container {
-  display: flex;
-  align-items: center;
-  flex-basis: 100%;
-  margin: 5px 0;
-}
-.main-container .game-instructions .instructions-container .keys-container #sound-icons-container {
-  width: 40px;
-  margin-right: 10px;
-}
-.main-container .game-instructions .instructions-container .keys-container #sound-icons-container #sound-on {
-  display: none;
-}
-.main-container .game-instructions .instructions-container .keys-container #sound-icons-container .sound-icon {
-  font-size: 40px;
-}
-.main-container .game-instructions .instructions-container .keys-container #sound-icons-container .sound-icon:hover {
-  cursor: pointer;
-}
-.main-container .game-instructions .instructions-container .keys-container #touch-icons-container {
-  margin-right: 26px;
-}
-.main-container .game-instructions .instructions-container .keys-container #touch-icons-container #touch-on {
-  display: none;
-}
-.main-container .game-instructions .instructions-container .keys-container #touch-icons-container .touch-icon {
-  font-size: 25px;
-}
-.main-container .game-instructions .instructions-container .keys-container #touch-icons-container .touch-icon:hover {
-  cursor: pointer;
-}
-.main-container .game-instructions .instructions-container .keys-container #pause-icons-container {
-  margin-right: 26px;
-}
-.main-container .game-instructions .instructions-container .keys-container #pause-icons-container #pause-on {
-  display: none;
-}
-.main-container .game-instructions .instructions-container .keys-container #pause-icons-container .pause-icon {
-  font-size: 25px;
-}
-.main-container .game-instructions .instructions-container .keys-container #pause-icons-container .pause-icon:hover {
-  cursor: pointer;
-}
-.main-container .game-instructions .instructions-container .keys-container .keys-icon {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  flex-basis: 120%;
-  margin-left: 5px;
-  column-gap: 5px;
-}
-.main-container .game-instructions .instructions-container .keys-container .keys-icon .arrow-icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 75px;
-  height: 48px;
-  font-size: 24px;
-}
-.main-container .game-instructions .instructions-container .keys-container .keys-icon .keyboard-key {
-  border: 2px solid white;
-  border-radius: 3px;
-  background-color: black;
-  font-size: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 18px;
-  height: 18px;
-}
-.main-container .game-instructions .instructions-container .keys-container .keys-icon .spacebar {
-  border: 2px solid white;
-  border-radius: 3px;
-  padding: 0 4px 4px 4px;
-  width: 60px;
-  height: 20px;
-  text-align: center;
-  font-size: 16px;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 1px;
-  margin-right: 25px;
-}
-.main-container .game-instructions .instructions-container .keys-container .keys-icon .mouse-click {
-  width: 30px;
-  background-color: black;
-}
-.main-container .game-instructions .instructions-container .keys-container .keys-text {
-  flex-basis: 35%;
-  font-size: 22px;
-}
-.main-container .game-instructions .instructions-container .keys-container .keys-text-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-basis: 55%;
-}
-.main-container .game-instructions .instructions-container .keys-container .keys-text-container .keys-text:first-of-type {
-  flex-basis: 100%;
-}
-.main-container .game-instructions .instructions-container .keys-container .keys-text-container .keys-text:last-of-type {
-  flex-basis: 50%;
-}
-.main-container .game-instructions ul {
-  margin-left: 5px;
-}
-.main-container .game-instructions ul li {
-  margin-top: 10px;
-  font-size: 20px;
-}
-.main-container .game-information {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  gap: 30px;
-  font-family: "Oswald", sans-serif;
-  font-size: 30px;
-}
-.main-container .game-information .score-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-.main-container .game-information .score-container #score {
-  display: inline-block;
-  min-height: 30px;
-}
-.main-container .game-information .player-health {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-.main-container .game-information .player-health #player-health-bar {
-  display: flex;
-  justify-content: start;
-  align-content: flex-start;
-  min-height: 26px;
-  width: 150px;
-}
-.main-container .game-information .player-health #player-health-bar .player-health-point {
-  width: 10px;
-  height: 20px;
-  background: white;
-  border: 3px ridge gray;
-  animation: fadeIn 1s linear;
-}
-.main-container .game-information #boss-info {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-.main-container .game-information #boss-info #boss-health-bar {
-  display: flex;
-  justify-content: start;
-  align-content: flex-start;
-  min-height: 36px;
-  width: 200px;
-}
-.main-container .game-information #boss-info #boss-health-bar .boss-health-point {
-  width: 15px;
-  height: 30px;
-  background: gray;
-  border: 3px ridge white;
-  animation: fadeIn 1s linear;
-}
-.main-container .game-information #wave-info {
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-}
-.main-container .game-information #wave-info .wave-text {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.main-container .game-information #wave-info .wave-numbers {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  gap: 10px;
-  min-width: 25px;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  margin: 10px;
 }
 
-.break {
-  flex-basis: 100%;
+.main-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
+@media screen and (max-width: 500px) {
+  .header {
+    display: grid;
+    height: 150px;
+    grid-template-areas: "score info" "life life";
+    grid-template-rows: 50px 50px;
+  }
+  .score-container {
+    justify-content: flex-start;
+  }
+  .health-bar {
+    width: 400px;
+  }
+  .health-bar li {
+    width: 40px;
+  }
+  #boss-health-bar {
+    width: 200px;
+  }
+  #boss-health-bar li {
+    width: 20px;
+  }
+}
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;

@@ -1,57 +1,63 @@
 <html lang="en">
-
   <head>
-    <title>Galactic Defender</title>
+    <title>Agave Defender</title>
     
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="author" content="Fahim Khan">
+    <meta name="author" content="Fahim Khan (Remixed by Alex Paxton)">
     <meta name="description" content="A galaxy shooter game, based off the classic Space Invaders and Galaga games. Made with only JavaScript." />
-    <meta property="og:title" content="Galactic Defender" />
+    <meta property="og:title" content="Agave Defender" />
     <meta property="og:image" content="src/assets/screenshots/og_image.png" />
     <meta property="og:description" content="A galaxy shooter game, based off the classic Space Invaders and Galaga games. Made with only JavaScript." />
     <meta property="og:url" content="https://fk652.github.io/Galactic-Defender/" />
 
     <script src="./dist/main.js" defer></script>
     
-    <link href='https://fonts.googleapis.com/css?family=Bangers|Oswald' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Special Elite+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./dist/main.css" />
     <link rel="icon" type="image/png" href="./src/assets/images/player1.png">
   </head>
 
   <body>
     <div class="main-container">
-      <aside class="game-information">
-        <div class="score-container">
-          <p>Score</p>
-          <span id="score"></span>
+      <header class="header">
+        <div class="header__block player-health">
+          <ul id="player-health-bar" class="health-bar"></ul>
         </div>
-
-        <div class="player-health">
-          <p>Player Health</p>
-          <ul id="player-health-bar"></ul>
+        <div class="header__block score-container">
+          <span id="score">0</span>
         </div>
-
-        <div id="wave-info">
-          <div class="wave-text">
-            <p>Wave:</p>
-            <p>Remaining:</p>
+        <div class="header__block game-info">
+          <div class="game-stats" id="wave-info">
+            <div class="game-stat">
+              <p class="game-stat__key">Wave</p>
+              <p class="game-stat__value" id="wave-number"></p>
+            </div>
+            <div class="game-stat">
+              <p class="game-stat__key">Enemies</p>
+              <p class="game-stat__value" id="enemies-remaining"></p>
+            </div>
           </div>
-
-          <div class="wave-numbers">
-            <p id="wave-number"></p>
-            <p id="enemies-remaining"></p>
+          <div id="boss-info">
+            <ul id="boss-health-bar" class="health-bar"></ul>
           </div>
         </div>
-
-        <div id="boss-info">
-          <p>Boss Health</p>
-          <ul id="boss-health-bar"></ul>
+      </header>
+      <canvas id="game-view" width="400" height="700"></canvas>
+      <aside class="instructions" id="instructions">
+        <div class="instructions-content">
+          <img src="https://images.squarespace-cdn.com/content/6316c6e206a7993959718879/466ac424-0a07-406e-84cb-4510aef458c8/logo.png" class="instructions-logo" />
+          <h3 class="instructions-heading">How to Play</h3>
+          <ul id="rules">
+            <li>Survive 5 waves of enemies and defeat the boss to win</li>
+            <li>Avoid enemy projectiles and colliding with enemies</li>
+            <li>Game over if player health reaches 0</li>
+            <li>Score bonus points for remaining HP between waves</li>
+          </ul>
+          <button class="instructions-start" id="start-game">Got it!</button>
         </div>
       </aside>
-
-      <canvas id="game-view" width="700" height="550"></canvas>
     </div>
   </body>
 </html>
