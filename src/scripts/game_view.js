@@ -68,7 +68,6 @@ class GameView {
     // only want to draw start, win, and game over messages once;
     this.messageDrawn = false;
 
-    this.bindSettingListeners();
     this.bindStartHandler();
   }
   
@@ -341,22 +340,6 @@ class GameView {
     if (event.key === "m") this.handleMouseFollowToggle();
     else if (event.key === "k") this.game.sounds.handleSoundToggle();
     else if (event.key === "p") this.handlePauseToggle();
-  }
-
-  // binds all setting related handlers (pause/unpause, mouse/touch follow, mute/unmute)
-  bindSettingListeners() {
-    document.addEventListener("keydown", this.handleSettingKeybinds.bind(this));
-
-    const touchContainer = document.getElementById("touch-icons-container");
-    touchContainer.addEventListener("click", this.handleMouseFollowToggle.bind(this));
-    if (( 'ontouchstart' in window ) || ( navigator.maxTouchPoints > 0 ) || ( navigator.msMaxTouchPoints > 0 )) {
-      document.getElementById("touch-text").innerText = "touch follow"
-      this.handleMouseFollowToggle();
-    }
-
-    const pauseContainer = document.getElementById("pause-icons-container");
-    pauseContainer.addEventListener("click", this.handlePauseToggle.bind(this));
-    document.addEventListener("visibilitychange", this.handleVisibilityChange.bind(this));
   }
 
   // player controls (arrow/wasd to move, spacebar to shoot)

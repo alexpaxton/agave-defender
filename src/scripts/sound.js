@@ -47,10 +47,6 @@ class Sound {
     this.currentSounds = {};
 
     this.toggle = false;
-    this.soundOnElement = document.getElementById("sound-on");
-    this.soundOffElement = document.getElementById("sound-off");
-    this.soundTextElement = document.getElementById("sound-text");
-    this.bindToggleListener();
   }
 
   // switching the background music, and play on loop
@@ -150,25 +146,6 @@ class Sound {
   reset() {
     this.switchBGM("waveBGM");
     this.clearCurrentSounds();
-  }
-
-  bindToggleListener() {
-    const soundContainer = document.getElementById("sound-icons-container");
-    soundContainer.addEventListener("click", this.handleSoundToggle.bind(this));
-  }
-
-  handleSoundToggle() {
-    if (this.toggle) {
-      this.toggleOff()
-      this.soundOnElement.style.display = 'none';
-      this.soundOffElement.style.display = 'block'; 
-      this.soundTextElement.innerHTML = "muted";
-    } else {
-      this.toggleOn()
-      this.soundOnElement.style.display = 'block';
-      this.soundOffElement.style.display = 'none';
-      this.soundTextElement.innerHTML = "sound on";
-    }
   }
 }
 
