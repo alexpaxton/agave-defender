@@ -38,10 +38,6 @@ class Ship extends MovingObject {
             }
           }, pattern.batchFireInterval * i);
         }
-
-        // play projectile sound
-        const projSound = this.projectileArgs[pattern.projectileArgIndex].projectileSound;
-        this.playShootSound(projSound);
         
         // set cooldown and start timer to reset it
         pattern.onCooldown = true;
@@ -49,11 +45,6 @@ class Ship extends MovingObject {
         pattern.timer = new Timer(this.game, this.resetCooldown.bind(this, idx), (pattern.cooldown + batchCooldownOffset));
       }
     })
-  }
-
-  // projectileSound is a string of either 'playerProjectile', 'bossProjectile', or 'enemyProjectile'
-  playShootSound(projectileSound) {
-    this.game.sounds.add(projectileSound);
   }
 
   // takes in an index for the shooting patterns array

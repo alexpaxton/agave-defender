@@ -42,7 +42,6 @@ class PlayerShip extends Ship {
       },
       type: "bullet",
       origin: "player",
-      projectileSound: "playerProjectile"
     }]
 
     // projectile pattern
@@ -149,7 +148,6 @@ class PlayerShip extends Ship {
     if (!this.invincible && this.health >= 0) {
       super.damageTaken(damage);
       this.invincible = true;
-      this.game.sounds.add("playerHurt");
       new Timer(this.game, this.resetInvincibility.bind(this), 1000);
     }
   }
@@ -168,7 +166,6 @@ class PlayerShip extends Ship {
         const posY = this.position[1] - 20;
         new Explosion(this.game, 100, [posX, posY], "major", [0, 0]);
         super.remove();
-        this.game.sounds.playMajorSound("playerDeath");
         new Timer(this.game, this.game.setGameOver.bind(this.game), 3000);
       }, 1000)
     }

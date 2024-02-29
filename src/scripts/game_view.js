@@ -234,7 +234,6 @@ class GameView {
     if (event?.key === " ") event.preventDefault();
 
     this.canvas.scrollIntoView();
-    this.game.sounds.switchBGM("waveBGM");
     this.game.startScreen = false;
     document.removeEventListener("keypress", this.startHandler)
     this.canvas.removeEventListener("pointerdown", this.startHandler)

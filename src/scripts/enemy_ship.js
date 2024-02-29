@@ -50,7 +50,6 @@ class EnemyShip extends Ship {
       },
       type: "bullet",
       origin: "enemy",
-      projectileSound: "enemyProjectile"
     }]
 
     // projectile pattern
@@ -79,7 +78,6 @@ class EnemyShip extends Ship {
 
   remove() {
     if (this.health <= 0) {
-      this.game.sounds.add("explosion");
       new Explosion(this.game, 80, this.position, "minor", [0, 0.25]);
       this.game.score += 50;
     }

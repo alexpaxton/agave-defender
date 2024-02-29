@@ -3,7 +3,6 @@
 import PlayerShip from "./player_ship";
 import EnemyShip from "./enemy_ship";
 import Boss from "./boss";
-import Sound from "./sound";
 import Timer from "./timer";
 
 class Game {
@@ -40,9 +39,6 @@ class Game {
     this.player = new PlayerShip(this);
     this.bossFight = false;
     this.boss = null;
-
-    // all sounds in the game handled with the Sound class
-    this.sounds = new Sound(this);
   }
 
   // apply game logic to determine next state of the game for next animation frame
@@ -155,7 +151,6 @@ class Game {
   setBoss() {
     this.player.disabled = true;
     if (Object.values(this.allMovingObjects.projectiles).length === 0) {
-      this.sounds.switchBGM("bossIncomingBGM");
       this.boss = new Boss(this);
       this.score += (this.player.health * 100);
       this.healPlayer();
@@ -171,7 +166,6 @@ class Game {
     if (!this.gameOver) {
       this.score += (this.player.health * 200);
       this.win = true;
-      this.sounds.playMajorSound("win");
     }
   }
 
@@ -180,7 +174,6 @@ class Game {
       this.secretEnd = true;
     } else if (!this.win) {
       this.gameOver = true;
-      this.sounds.playMajorSound("gameOver");
     }
   }
 
@@ -210,8 +203,6 @@ class Game {
     this.boss = null;
     this.bossFight = false;
     this.gameView.switchGameInformation();
-
-    this.sounds.reset();
   }
 }
 
