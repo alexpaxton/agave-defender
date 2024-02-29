@@ -26,7 +26,8 @@ body {
   font-family: "Special Elite", system-ui;
 }
 
-.header {
+header.header {
+  position: initial !important;
   width: 400px;
   height: 150px;
   display: grid;
