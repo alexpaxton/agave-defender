@@ -100,7 +100,7 @@ class GameView {
   drawStartWinGameOver() {
     if (!this.messageDrawn) {
       const message = this.game.startScreen 
-                      ?  ["Press any key or click here to", "START"]
+                      ?  ["Tap to", "START"]
                       : this.game.secretEnd
                         ? "🫡"
                         : this.game.gameOver
@@ -108,15 +108,15 @@ class GameView {
                           : "YOU WIN"
 
       this.ctx.textAlign = "center";
-      this.ctx.fillStyle = "white";
+      this.ctx.fillStyle = "#ef9841";
 
       if (this.game.startScreen) {
-        this.ctx.font = "40px roboto";
+        this.ctx.font = `40px 'Special Elite'`;
         this.ctx.fillText(message[0], this.canvasWidth/2, this.canvasHeight/2 - 50);
-        this.ctx.font = "48px roboto";
+        this.ctx.font = `48px 'Special Elite'`;
         this.ctx.fillText(message[1], this.canvasWidth/2, this.canvasHeight/2);
       } else {
-        this.ctx.font = "48px roboto";
+        this.ctx.font = `48px 'Special Elite'`;
         this.ctx.fillText(message, this.canvasWidth/2, this.canvasHeight/2);
       }
       this.messageDrawn = true;
@@ -130,16 +130,16 @@ class GameView {
   }
 
   drawRetryKey() {
-    const message = "(press any key or click here to retry)";
-    this.ctx.font = "24px roboto";
+    const message = "Tap to retry";
+    this.ctx.font = `24px 'Special Elite'`;
     this.ctx.fillText(message, this.canvasWidth/2, this.canvasHeight/2 + 50);
     this.bindRetryHandler();
   }
 
   drawPause() {
     this.ctx.textAlign = "center";
-    this.ctx.fillStyle = "white";
-    this.ctx.font = "48px roboto";
+    this.ctx.fillStyle = "#ef9841";
+    this.ctx.font = `48px 'Special Elite'`;
     this.ctx.fillText("PAUSED", this.canvasWidth/2, this.canvasHeight/2);
   }
 

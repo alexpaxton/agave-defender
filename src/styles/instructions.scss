@@ -3,6 +3,7 @@ $yellow: #ef9841;
 $green: #056b56;
 $green-dark: #004e3e;
 $almost-black: #0a2114;
+$white: #ffffff;
 $beige: #e3e0c9;
 $orange: #f05023;
 
@@ -12,8 +13,8 @@ $orange: #f05023;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: $yellow;
-  color: $green;
+  background-color: $green;
+  color: $white;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -28,11 +29,12 @@ $orange: #f05023;
 
 .instructions-content {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  gap: 60px;
+  gap: 40px;
 
   h3.instructions-heading {
     font-size: 40px;
@@ -43,26 +45,39 @@ $orange: #f05023;
   }
 
   ul {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    padding: 24px;
+    background-color: $green-dark;
+    border-radius: 8px;
+    border: 2px solid $white;
+  }
+
+  ul li {
+    font-size: 20px;
+    line-height: 28px;
   }
 }
 
 .instructions-start {
-  background-color: $green;
-  color: $yellow;
+  background-color: $orange;
+  color: $white;
   border: 0;
   font-size: 40px;
   font-weight: 600;
   height: 80px;
-  width: 300px;
+  width: 400px;
   margin: 0 auto;
-  border-radius: 4px;
+  border-radius: 8px;
   text-transform: uppercase;
   font-family: inherit;
   line-height: 88px;
+  border: 2px solid $white;
 
   &:hover {
     cursor: pointer;
