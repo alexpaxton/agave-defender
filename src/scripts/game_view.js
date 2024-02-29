@@ -55,7 +55,7 @@ class GameView {
     // mouse follow options
     this.touchOnElement = document.getElementById("touch-on");
     this.touchOffElement = document.getElementById("touch-off");
-    this.mouseFollow = false;
+    this.mouseFollow = true;
     this.mousePosition = null; // {x: xValue, y: yValue}
     
     // pause options
