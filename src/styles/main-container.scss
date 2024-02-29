@@ -20,24 +20,21 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: $info-height;
-  display: flex;
-  align-items: center;
-  padding: 0 15px;
+  width: 400px;
+  height: 150px;
+  display: grid;
+  grid-template-areas: "score info" "life life" "boss boss";
+  grid-template-rows: $info-height $info-height;
 }
 
 .header__block {
   display: flex;
-  flex: 1 0 33.3333%;
 }
 
 .player-health {
@@ -46,7 +43,7 @@ body {
 
 .score-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
   font-size: 20px;
   font-weight: bold;
   color: $beige;
@@ -81,9 +78,9 @@ body {
 }
 
 .health-bar {
-  width: 200px;
+  width: 400px;
   height: 20px;
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: $almost-black;
   border: 2px solid $yellow;
   display: flex;
@@ -91,7 +88,7 @@ body {
   overflow: hidden;
 
   li {
-    width: 20px;
+    width: 40px;
     height: 20px;
     animation: fadeIn 1s linear;
   }
@@ -108,6 +105,18 @@ body {
 }
 
 #boss-health-bar {
+  grid-area: boss;
+  position: relative;
+  &:after {
+    content: 'BOSS';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    font-size: 16px;
+    color: $yellow;
+    transform: translate(-50%, -50%);
+  }
   li {
     background-color: $green;
   }
@@ -132,34 +141,4 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-}
-
-
-@media screen and (max-width: 500px) {
-  .header {
-    display: grid;
-    height: 150px;
-    grid-template-areas: "score info" "life life";
-    grid-template-rows: $info-height $info-height;
-  }
-
-  .score-container {
-    justify-content: flex-start;
-  }
-
-  .health-bar {
-    width: 400px;
-
-    li {
-      width: 40px;
-    }
-  }
-
-  #boss-health-bar {
-    width: 200px;
-
-    li {
-      width: 20px;
-    }
-  }
 }
