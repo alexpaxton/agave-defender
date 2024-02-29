@@ -30,6 +30,9 @@ const config = {
       }
     ]
   },
+  optimization: {
+    minimize: false,
+  },
   plugins: [new MiniCssExtractPlugin()]
 };
 
