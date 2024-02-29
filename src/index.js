@@ -5,8 +5,6 @@ const imageUrls = [
   "src/assets/images/boss1.png",
   "src/assets/images/enemy_projectile.png",
   "src/assets/images/enemy1.png",
-  "src/assets/images/enemy2.png",
-  "src/assets/images/enemy3.png",
   "src/assets/images/player_projectile.png",
   "src/assets/images/player1.png",
   "src/assets/images/game_background.png",
