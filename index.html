@@ -21,43 +21,45 @@
 
   <body>
     <div class="main-container">
-      <header class="header">
-        <div class="header__block player-health">
-          <ul id="player-health-bar" class="health-bar"></ul>
-        </div>
-        <div class="header__block score-container">
-          <span id="score">0</span>
-        </div>
-        <div class="header__block game-info">
-          <div class="game-stats" id="wave-info">
-            <div class="game-stat">
-              <p class="game-stat__key">Wave</p>
-              <p class="game-stat__value" id="wave-number"></p>
-            </div>
-            <div class="game-stat">
-              <p class="game-stat__key">Enemies</p>
-              <p class="game-stat__value" id="enemies-remaining"></p>
+      <div class="main" id="game-main">
+        <header class="header">
+          <div class="header__block player-health">
+            <ul id="player-health-bar" class="health-bar"></ul>
+          </div>
+          <div class="header__block score-container">
+            <span id="score">0</span>
+          </div>
+          <div class="header__block game-info">
+            <div class="game-stats" id="wave-info">
+              <div class="game-stat">
+                <p class="game-stat__key">Wave</p>
+                <p class="game-stat__value" id="wave-number"></p>
+              </div>
+              <div class="game-stat">
+                <p class="game-stat__key">Enemies</p>
+                <p class="game-stat__value" id="enemies-remaining"></p>
+              </div>
             </div>
           </div>
-        </div>
-        <div id="boss-info">
-          <ul id="boss-health-bar" class="health-bar"></ul>
-        </div>
-      </header>
-      <canvas id="game-view" width="400" height="700"></canvas>
-      <aside class="instructions" id="instructions">
-        <div class="instructions-content">
-          <img src="https://images.squarespace-cdn.com/content/6316c6e206a7993959718879/3e841f8c-165e-4984-9dd5-c773a1226f87/compAsset+4%4010x.png" class="instructions-logo" />
-          <h3 class="instructions-heading">How to Play</h3>
-          <ul id="rules">
-            <li>Survive 5 waves of enemies and defeat the boss to win</li>
-            <li>Avoid enemy projectiles and colliding with enemies</li>
-            <li>Game over if player health reaches 0</li>
-            <li>Score bonus points for remaining HP between waves</li>
-          </ul>
-          <button class="instructions-start" id="start-game">Got it!</button>
-        </div>
-      </aside>
+          <div id="boss-info">
+            <ul id="boss-health-bar" class="health-bar"></ul>
+          </div>
+        </header>
+        <canvas id="game-view" width="398" height="750"></canvas>
+        <aside class="instructions" id="instructions">
+          <div class="instructions-content">
+            <img src="https://images.squarespace-cdn.com/content/6316c6e206a7993959718879/3e841f8c-165e-4984-9dd5-c773a1226f87/compAsset+4%4010x.png" class="instructions-logo" />
+            <h3 class="instructions-heading">How to Play</h3>
+            <ul id="rules">
+              <li>Survive 5 waves of enemies and defeat the boss to win</li>
+              <li>Avoid enemy projectiles and colliding with enemies</li>
+              <li>Game over if player health reaches 0</li>
+              <li>Score bonus points for remaining HP between waves</li>
+            </ul>
+            <button class="instructions-start" id="start-game">Got it!</button>
+          </div>
+        </aside>
+      </div>
     </div>
   </body>
 </html>

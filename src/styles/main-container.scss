@@ -22,17 +22,24 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-family: "Special Elite", system-ui;
+}
+
+.main {
+  width: calc(100vw - 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header.header {
   position: initial !important;
-  width: 400px;
+  width: 100%;
   height: 150px;
   display: grid;
   grid-template-areas: "score info" "life life" "boss boss";
   grid-template-rows: $info-height $info-height;
+  margin-top: 16px;
 }
 
 .header__block {
@@ -80,7 +87,7 @@ header.header {
 }
 
 .health-bar {
-  width: 400px;
+  width: 100%;
   height: 20px;
   border-radius: 8px;
   background-color: $almost-black;
@@ -90,7 +97,7 @@ header.header {
   overflow: hidden;
 
   li {
-    width: 40px;
+    width: 10%;
     height: 20px;
     animation: fadeIn 1s linear;
   }
@@ -103,11 +110,11 @@ header.header {
 }
 
 #boss-info {
+  grid-area: boss;
   display: none;
 }
 
 #boss-health-bar {
-  grid-area: boss;
   position: relative;
   &:after {
     content: 'BOSS';
@@ -126,6 +133,8 @@ header.header {
 }
 
 #game-view {
+  width: calc(100vw - 36px);
+  height: calc(100dvh - 186px);
   border: 2px solid $yellow;
   border-radius: 8px;
   background: black;
@@ -135,13 +144,4 @@ header.header {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  margin: 10px;
-}
-
-.main-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
 }
